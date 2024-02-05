@@ -3,22 +3,30 @@ package lucafavaretto.U5W1D1.menu.toppings;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 import lucafavaretto.U5W1D1.entity.Topping;
 
 @ToString
 @Setter
 @Getter
 public class Ham extends Topping {
-    public Ham() {
-        super("Ham", 0.99, 35);
+
+    public Ham(MenuElement menuElement) {
+        this.menuElement = menuElement;
     }
 
     @Override
-    public String toString() {
-        return "Ham{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", kcal=" + kcal +
-                '}';
+    public String getProductName() {
+        return menuElement.getProductName() + " with tomato";
+    }
+
+    @Override
+    public int getKcal() {
+        return menuElement.getKcal() + 35;
+    }
+
+    @Override
+    public double getPrice() {
+        return menuElement.getPrice() + 0.20;
     }
 }

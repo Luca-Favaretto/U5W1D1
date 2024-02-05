@@ -1,31 +1,26 @@
 package lucafavaretto.U5W1D1.menu.toppings;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 import lucafavaretto.U5W1D1.entity.Topping;
 
-@Setter
-@ToString
-@Getter
-public class Cheese extends Topping {
-    public Cheese(MenuElement menuElement) {
+public class Tomato extends Topping {
+
+    public Tomato(MenuElement menuElement) {
         this.menuElement = menuElement;
     }
 
     @Override
     public String getProductName() {
-        return menuElement.getProductName() + " with cheese";
+        return menuElement.getProductName() + " with tomato";
     }
 
     @Override
     public int getKcal() {
-        return menuElement.getKcal() + 92;
+        return menuElement.getKcal() + 20;
     }
 
     @Override
     public double getPrice() {
-        return menuElement.getPrice() + 0.69;
+        return menuElement.getPrice() + 0.20;
     }
 }

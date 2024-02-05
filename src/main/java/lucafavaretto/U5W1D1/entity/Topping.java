@@ -10,21 +10,15 @@ import java.util.Set;
 @Setter
 @Getter
 
-public class Topping extends MenuElement {
+public abstract class Topping extends MenuElement {
 
-    public Topping(String name, double price, int kcal) {
-        super(name, price, kcal);
-
-    }
-
-    public Topping(String name) {
-        super(name);
-    }
+    protected MenuElement menuElement;
 
     @Override
-    public String toString() {
-        return "Topping{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+    public abstract String getProductName();
 }
+
+
+
+
+

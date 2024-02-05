@@ -1,20 +1,39 @@
 package lucafavaretto.U5W1D1.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 
 @Getter
-
 @Setter
 public class Drink extends MenuElement {
     private double quantityLt;
 
 
     public Drink(String name, double price, int kcal, double quantityLt) {
-        super(name, price, kcal);
+        this.name = name;
+        this.price = price;
+        this.kcal = kcal;
         this.quantityLt = quantityLt;
+    }
+
+    @Override
+    public int getKcal() {
+        return kcal;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "quantityLt=" + quantityLt +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", kcal=" + kcal +
+                '}';
     }
 }

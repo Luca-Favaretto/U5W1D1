@@ -5,30 +5,39 @@ import lombok.Setter;
 import lombok.ToString;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 
-import java.util.Set;
-
 @Getter
 @ToString
 @Setter
 public class Pizza extends MenuElement {
-    protected Set<Topping> toppings;
-    private boolean dimensionXL;
 
-    public Pizza(String name, double price, int kcal, Set<Topping> toppings) {
-        super(name, price, kcal);
-        this.toppings = toppings;
+    protected boolean dimensionXL;
+
+    public Pizza(String name, double price, int kcal) {
+        this.name = name;
+        this.price = price;
+        this.kcal = kcal;
         this.dimensionXL = false;
 
     }
 
-    protected void addTopping(Topping topping) {
-        toppings.add(topping);
-    }
 
     public void upgradeDimensionXL() {
-        if (this.dimensionXL = false) {
+        if (!this.dimensionXL) {
+            this.name = getProductName() + " XL";
+            this.kcal += 200;
             this.dimensionXL = true;
             this.price += 2;
         }
+    }
+
+    @Override
+    public int getKcal() {
+        return kcal;
+    }
+
+
+    @Override
+    public double getPrice() {
+        return price;
     }
 }
