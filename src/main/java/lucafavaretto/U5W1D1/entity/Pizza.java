@@ -11,13 +11,13 @@ import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 public class Pizza extends MenuElement {
 
     protected boolean dimensionXL;
+    
 
     public Pizza(String name, double price, int kcal) {
         this.name = name;
         this.price = price;
         this.kcal = kcal;
         this.dimensionXL = false;
-
     }
 
 

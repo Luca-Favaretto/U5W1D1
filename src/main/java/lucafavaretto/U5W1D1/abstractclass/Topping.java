@@ -1,4 +1,4 @@
-package lucafavaretto.U5W1D1.entity;
+package lucafavaretto.U5W1D1.abstractclass;
 
 import lombok.Getter;
 import lombok.Setter;

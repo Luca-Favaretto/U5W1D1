@@ -1,7 +1,7 @@
 package lucafavaretto.U5W1D1.menu.toppings;
 
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
-import lucafavaretto.U5W1D1.entity.Topping;
+import lucafavaretto.U5W1D1.abstractclass.Topping;
 
 public class Tomato extends Topping {
 

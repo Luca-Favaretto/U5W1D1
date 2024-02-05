@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 import lucafavaretto.U5W1D1.entity.Drink;
-import lucafavaretto.U5W1D1.entity.Pizza;
-import lucafavaretto.U5W1D1.entity.Topping;
 
 import java.util.List;
 

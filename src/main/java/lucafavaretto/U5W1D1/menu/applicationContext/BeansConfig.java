@@ -1,4 +1,4 @@
-package lucafavaretto.U5W1D1.menu.Beans;
+package lucafavaretto.U5W1D1.menu.applicationContext;
 
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 import lucafavaretto.U5W1D1.entity.Drink;
@@ -36,15 +36,16 @@ public class BeansConfig {
         return new Pizza("Hawaiian Pizza", 6.49, 1024);
     }
 
-    @Bean
-    @Primary
-    Pizza getMargheritaPizza() {
-        return new Pizza("Margherita Pizza", 4.99, 1104);
-    }
 
     @Bean
     Pizza getSalamiPizza() {
         return new Pizza("Salami Pizza", 5.99, 1160);
+    }
+
+    @Bean
+    @Primary
+    Pizza getMargheritaPizza() {
+        return new Pizza("Margherita Pizza", 4.99, 1104);
     }
 
     @Bean
@@ -98,7 +99,6 @@ public class BeansConfig {
         drinkList.add(getLemonade());
         drinkList.add(getWine());
         drinkList.add(getWater());
-
 
         return new Menu(pizzaList, drinkList);
     }
