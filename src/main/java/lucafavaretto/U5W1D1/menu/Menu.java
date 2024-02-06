@@ -16,7 +16,6 @@ import java.util.List;
 @Component
 public class Menu {
     private List<MenuElement> pizzaList;
-    private List<Drink> drinkList;
 
 
     public void printMenu() {
@@ -25,10 +24,6 @@ public class Menu {
         this.pizzaList.forEach(menuElement -> System.out.println(menuElement.getProductName() + ", price" + menuElement.getPrice() + "$ and " + menuElement.getKcal() + "kcal"));
         System.out.println();
 
-
-        System.out.println("DRINKS");
-        this.drinkList.forEach(System.out::println);
-        System.out.println();
 
     }
 }

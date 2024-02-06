@@ -92,19 +92,6 @@ public class BeansConfig {
         return new Salami(pizza);
     }
 
-    @Bean
-    List<MenuElement> pizzaList() {
-        List<MenuElement> pizzaList = new ArrayList<>();
-        return pizzaList;
-    }
-
-
-    @Bean
-    List<Drink> drinkList() {
-        List<Drink> drinkList = new ArrayList<>();
-        return drinkList;
-    }
-
 
     @Bean
     Table addTable1() {
