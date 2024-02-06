@@ -92,27 +92,19 @@ public class BeansConfig {
         return new Salami(pizza);
     }
 
+    @Bean
+    List<MenuElement> pizzaList() {
+        List<MenuElement> pizzaList = new ArrayList<>();
+        return pizzaList;
+    }
+
 
     @Bean
-    Menu getMenu() {
-        List<MenuElement> pizzaList = new ArrayList<>();
+    List<Drink> drinkList() {
         List<Drink> drinkList = new ArrayList<>();
-
-        pizzaList.add(getHawaiianPizza());
-        pizzaList.add(getMargheritaPizza());
-
-        Pizza salamiXL = getSalamiPizza();
-        salamiXL.upgradeDimensionXL();
-        pizzaList.add(salamiXL);
-
-        pizzaList.add(addOnions(getMargheritaPizza()));
-
-        drinkList.add(getLemonade());
-        drinkList.add(getWine());
-        drinkList.add(getWater());
-
-        return new Menu(pizzaList, drinkList);
+        return drinkList;
     }
+
 
     @Bean
     Table addTable1() {

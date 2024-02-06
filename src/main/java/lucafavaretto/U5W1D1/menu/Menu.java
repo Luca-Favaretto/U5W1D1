@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 import lucafavaretto.U5W1D1.entity.Drink;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Getter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@Component
 public class Menu {
     private List<MenuElement> pizzaList;
     private List<Drink> drinkList;

@@ -23,7 +23,7 @@ public class MyRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Menu m = (Menu) ctx.getBean("getMenu");
+        Menu m = (Menu) ctx.getBean("menu");
         m.printMenu();
         double tableCharge = (double) ctx.getBean("getTableCharge");
 
