@@ -12,10 +12,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@org.springframework.core.annotation.Order(0)
 @Slf4j
 public class MyRunner implements CommandLineRunner {
     @Autowired
@@ -31,7 +33,7 @@ public class MyRunner implements CommandLineRunner {
         List<MenuElement> el = new ArrayList<>();
         MenuElement water = (MenuElement) ctx.getBean("getWater");
         MenuElement marg = (MenuElement) ctx.getBean("getMargheritaPizza");
-
+        log.info(marg.toString());
 
         Table table1 = (Table) ctx.getBean("addTable1");
         el.add(water);

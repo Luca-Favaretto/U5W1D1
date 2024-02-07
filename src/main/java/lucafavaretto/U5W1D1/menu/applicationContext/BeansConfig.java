@@ -11,6 +11,7 @@ import lucafavaretto.U5W1D1.enums.OrderState;
 import lucafavaretto.U5W1D1.enums.TableState;
 import lucafavaretto.U5W1D1.menu.Menu;
 import lucafavaretto.U5W1D1.menu.toppings.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -76,7 +77,7 @@ public class BeansConfig {
 
 
     @Bean
-    Onions addOnions(MenuElement pizza) {
+    Onions addOnions(@Qualifier("getSalamiPizza") MenuElement pizza) {
         return new Onions(pizza);
     }
 
