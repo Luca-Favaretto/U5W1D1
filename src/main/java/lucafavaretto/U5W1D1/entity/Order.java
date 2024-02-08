@@ -1,6 +1,8 @@
 package lucafavaretto.U5W1D1.entity;
 
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 import lucafavaretto.U5W1D1.enums.OrderState;
@@ -11,18 +13,29 @@ import java.util.List;
 
 @Getter
 @Setter
+//@Entity
+//@NoArgsConstructor
 public class Order {
-    private int id;
-    private Table table;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
+
     private OrderState orderState;
     private int nCustomer;
     private double hour;
+    //    @ManyToMany
+//    @JoinTable(name = "menu_elements_order",
+//            joinColumns = @JoinColumn(name = "menu_element_id"),
+//            inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<MenuElement> menuElements;
 
+    //    @ManyToOne
+//    @JoinColumn(name = "id_order")
+    private Table table;
 
     @Autowired
-    public Order(int id, Table table, OrderState orderState, int nCustomer, double hour, List<MenuElement> menuElements) {
-        this.id = id;
+    public Order(Table table, OrderState orderState, int nCustomer, double hour, List<MenuElement> menuElements) {
         this.table = table;
         this.orderState = orderState;
         this.nCustomer = nCustomer;
@@ -37,11 +50,14 @@ public class Order {
             bill += el.getPrice();
         }
         bill += (nCustomer * tableCharge);
-        System.out.println(tableCharge);
-        System.out.println("The bill of table " + table.getId() + " is " + bill);
+        double roundedBill = Math.round(bill * 100.0) / 100.0;
+
+        System.out.println("The bill of table " + table.getId() + " is " + roundedBill);
+
         table.setTableState(TableState.SERVED);
         setOrderState(OrderState.FREE);
-        return bill;
+
+        return roundedBill;
     }
 
     @Override

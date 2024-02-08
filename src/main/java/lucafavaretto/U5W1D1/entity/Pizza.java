@@ -1,6 +1,8 @@
 package lucafavaretto.U5W1D1.entity;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
@@ -8,10 +10,12 @@ import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 @Getter
 @ToString
 @Setter
+@Entity
+@NoArgsConstructor
 public class Pizza extends MenuElement {
 
     protected boolean dimensionXL;
-    
+
 
     public Pizza(String name, double price, int kcal) {
         this.name = name;

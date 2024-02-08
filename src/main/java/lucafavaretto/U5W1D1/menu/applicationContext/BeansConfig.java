@@ -96,39 +96,28 @@ public class BeansConfig {
 
     @Bean
     Table addTable1() {
-        return new Table(1, 2, TableState.READY);
+        return new Table(2, TableState.READY);
     }
 
     @Bean
     Table addTable2() {
-        return new Table(2, 8, TableState.READY);
+        return new Table(8, TableState.READY);
     }
 
     @Bean
     Table addTable3() {
-        return new Table(3, 8, TableState.READY);
+        return new Table(8, TableState.READY);
     }
 
 
     @Bean
     Table addTable4() {
-        return new Table(4, 8, TableState.READY);
+        return new Table(8, TableState.READY);
     }
 
     @Bean
     Table addTable5() {
-        return new Table(5, 8, TableState.READY);
-    }
-
-    @Bean
-    public List<Table> tables() {
-        return Arrays.asList(
-                addTable1(),
-                addTable2(),
-                addTable3(),
-                addTable4(),
-                addTable5()
-        );
+        return new Table(8, TableState.READY);
     }
 
 

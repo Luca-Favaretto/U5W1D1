@@ -1,11 +1,15 @@
 package lucafavaretto.U5W1D1.entity;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lucafavaretto.U5W1D1.abstractclass.MenuElement;
 
 @Getter
 @Setter
+@Entity
+@NoArgsConstructor
 public class Drink extends MenuElement {
     private double quantityLt;
 

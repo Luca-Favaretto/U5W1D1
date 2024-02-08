@@ -1,5 +1,6 @@
 package lucafavaretto.U5W1D1.abstractclass;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,13 +10,17 @@ import java.util.Set;
 
 @Setter
 @Getter
-
-public abstract class Topping extends MenuElement {
-
+@Entity
+public abstract class Topping {
+    @ManyToOne
+    @JoinColumn(name = "menu_element_id")
     protected MenuElement menuElement;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-    @Override
-    public abstract String getProductName();
+
 }
 
 
