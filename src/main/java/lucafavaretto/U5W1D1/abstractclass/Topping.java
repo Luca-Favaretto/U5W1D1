@@ -11,14 +11,14 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
-public abstract class Topping {
-    @ManyToOne
-    @JoinColumn(name = "menu_element_id")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Topping extends MenuElement {
+
+    //
+//    @ManyToOne
+//    @JoinColumn(name = "menu_element_id")
+    @Transient
     protected MenuElement menuElement;
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
-    private Long id;
 
 
 }

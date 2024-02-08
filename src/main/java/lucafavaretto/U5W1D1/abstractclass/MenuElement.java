@@ -11,8 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
 public abstract class MenuElement {
     protected String name = "";
     protected double price;
@@ -28,8 +27,8 @@ public abstract class MenuElement {
 //            inverseJoinColumns = @JoinColumn(name = "menu_element_id"))
 //    private List<Order> orders;
 
-    @OneToMany
-    private List<Topping> toppings;
+//    @OneToMany(mappedBy = "menuElement")
+//    private List<Topping> toppings;
 
     public String getProductName() {
         return name;
